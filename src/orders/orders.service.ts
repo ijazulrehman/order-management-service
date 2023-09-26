@@ -78,8 +78,6 @@ export default class OrdersService {
     paginationDto: PaginationDto,
     filteringDto: FilteringDto,
   ): Promise<PaginatedOrdersResultDto> {
-    const report = await this.queryDailyReport('2023-09-15');
-    return report;
     const skippedItems = (paginationDto.page - 1) * paginationDto.limit;
 
     const totalCount = await this.ordersRepository.count();
